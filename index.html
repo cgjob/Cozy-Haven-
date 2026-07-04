@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Haven | Lifestyle, DIY Decor & Quick Recipes</title>
+    <!-- Open Graph (OG) Meta Tags for US Social Sharing & Flipboard -->
+    <meta property="og:title" content="Cozy Haven | Lifestyle, DIY Decor & Quick Recipes">
+    <meta property="og:description" content="Simple DIY Decor, Quick Recipes & Cozy Living Habits. Elevate your everyday life.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=1200">
+    <meta property="og:url" content="https://cgjob.github.io/Cozy-Haven-/">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Search Console Verification -->
+    <meta name="google-site-verification" content="यहाँ_अपना_गूगल_सर्च_कंसोल_वेरिफिकेशन_कोड_लिखें" />
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="progress-container">
+        <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- Toast Notification Popup -->
+    <div class="toast-notification" id="shareToast">
+        <i class="fas fa-check-circle"></i> Link copied to clipboard!
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <svg class="logo-svg" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="32" cy="32" r="29" fill="none" stroke="var(--primary)" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <path d="M32,48 C32,32 44,24 44,16 C32,24 32,36 32,48 Z" fill="var(--primary)" opacity="0.95"/>
+                    <path d="M32,48 C32,35 22,28 20,20 C26,26 32,38 32,48 Z" fill="var(--primary)" opacity="0.6"/>
+                    <line x1="32" y1="48" x2="32" y2="16" stroke="var(--dark)" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span>Cozy Haven</span>
+            </a>
+            
+            <nav class="nav-menu" id="navMenu">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#blog-section" class="nav-link">Blog</a>
+                <a href="#newsletter" class="nav-link">Subscribe</a>
+                <!-- Link to Admin Folder Panel -->
+                <a href="admin/admin.html" class="nav-link admin-nav-link">Admin Dashboard</a>
+            </nav>
+
+            <div class="header-right">
+                <button class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="https://pinterest.com" target="_blank" class="pinterest-btn">
+                    <i class="fab fa-pinterest"></i> Follow
+                </a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ⬇️ ADSTERRA BANNER AD 1 (Header के ठीक नीचे) ⬇️ -->
+    <div class="ad-banner-wrapper" style="display: flex; justify-content: center; margin: 15px auto; padding: 0 10px; max-width: 320px;">
+        <script>
+          atOptions = {
+            'key' : 'dbd551c34efe81ea61a6d8bbec278729',
+            'format' : 'iframe',
+            'height' : 50,
+            'width' : 320,
+            'params' : {}
+          };
+        </script>
+        <script src="https://www.highperformanceformat.com/dbd551c34efe81ea61a6d8bbec278729/invoke.js"></script>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-tag">Elevate Your Everyday Life</span>
+            <h1>Simple DIY Decor, Quick Recipes & Cozy Living Habits</h1>
+            <p>Explore practical tips to make your home, food, and daily routines more beautiful, cozy, and affordable. Join our growing community of slow-living enthusiasts.</p>
+            <a href="#blog-section" class="hero-btn">Explore Latest Ideas</a>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-container" id="blog-section">
+        <div class="section-title">
+            <h2>From The Blog</h2>
+            <p>Practical inspiration for your home, kitchen, and mind.</p>
+        </div>
+
+        <!-- Filter Navigation Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">All Stories</button>
+            <button class="filter-btn" data-filter="decor">DIY & Decor</button>
+            <button class="filter-btn" data-filter="recipes">Quick Food</button>
+            <button class="filter-btn" data-filter="wellness">Self-Care</button>
+            <button class="filter-btn fav-filter-btn" data-filter="favorites">
+                <i class="fas fa-heart"></i> Saved (<span id="favCount">0</span>)
+            </button>
+        </div>
+
+        <!-- Blog Cards Grid -->
+        <div class="blog-grid" id="blogGrid">
+            <!-- Shimmer Skeleton Loaders -->
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+            <div class="skeleton-card"></div>
+        </div>
+    </section>
+
+    <!-- ARTICLE READER MODAL (कस्टम पोस्ट रीडर) -->
+    <div class="modal" id="articleModal">
+        <div class="modal-overlay" class="close-trigger"></div>
+        <div class="modal-container">
+            <button class="modal-close" class="close-trigger" aria-label="Close Article"><i class="fas fa-times"></i></button>
+            <div class="modal-header-img" id="modalHeroImg"></div>
+            <div class="modal-body">
+                <div class="modal-meta">
+                    <span id="modalCategory" class="modal-cat-tag">Category</span>
+                    <span id="modalDate">July 4, 2026</span>
+                    <span id="modalAuthor">By Sarah Jenkins</span>
+                </div>
+                <h2 id="modalTitle">Article Title</h2>
+                <div class="modal-content" id="modalMainContent"></div>
+                
+                <!-- ⬇️ ADSTERRA BANNER AD 2 (Modal के अंदर शेयर बटन्स के ऊपर) ⬇️ -->
+                <div class="modal-ad-banner" style="display: flex; justify-content: center; margin: 30px auto 10px; max-width: 320px; width: 100%;">
+                    <script>
+                      atOptions = {
+                        'key' : 'dbd551c34efe81ea61a6d8bbec278729',
+                        'format' : 'iframe',
+                        'height' : 50,
+                        'width' : 320,
+                        'params' : {}
+                      };
+                    </script>
+                    <script src="https://www.highperformanceformat.com/dbd551c34efe81ea61a6d8bbec278729/invoke.js"></script>
+                </div>
+
+                <!-- Modal Social Share Bar Dock -->
+                <div class="modal-share-bar">
+                    <span class="share-title">Share this story:</span>
+                    <div class="share-icons-wrapper">
+                        <a href="#" id="sharePin" target="_blank" class="share-btn pin" title="Pin on Pinterest"><i class="fab fa-pinterest"></i></a>
+                        <a href="#" id="shareFb" target="_blank" class="share-btn fb" title="Share on Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" id="shareWa" target="_blank" class="share-btn wa" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <button id="shareCopy" class="share-btn copy" title="Copy Link"><i class="fas fa-link"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter" id="newsletter">
+        <div class="newsletter-content">
+            <i class="far fa-envelope-open envelope-icon"></i>
+            <h2>Join Our Cozy Community</h2>
+            <p>Subscribe to receive weekly home decor ideas, seasonal recipe cards, and mindfulness tips straight to your inbox.</p>
+            <form class="newsletter-form" id="subscribeForm">
+                <input type="email" placeholder="Your best email address..." required id="emailInput">
+                <button type="submit">Join Weekly Newsletter</button>
+            </form>
+            <p class="spam-text">*We respect your privacy. Unsubscribe at any time.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Cozy Haven</h3>
+                <p>Spreading cozy lifestyle inspiration to help you live a simpler, warmer, and more beautiful everyday life.</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+                <a href="#"><i class="fab fa-tiktok"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <!-- Footer Admin Link -->
+            <p>&copy; 2026 Cozy Haven. <a href="admin/admin.html" style="color:var(--primary); text-decoration:none; margin-left: 10px;">Admin Panel Login</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
