@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Cozy Haven | Lifestyle, DIY Decor &amp; Quick Recipes</title>
+        <link>https://cgjob.github.io/Cozy-Haven-/</link>
+        <description>Simple DIY Decor, Quick Recipes &amp; Cozy Living Habits.</description>
+        <language>en-us</language>
+        <lastBuildDate>Sun, 05 Jul 2026 12:00:00 GMT</lastBuildDate>
+        <atom:link href="https://cgjob.github.io/Cozy-Haven-/feed.xml" rel="self" type="application/rss+xml" />
+        
+        <!-- Article 1 -->
+        <item>
+            <title>10 Budget-Friendly Cozy Living Room Ideas</title>
+            <link>https://cgjob.github.io/Cozy-Haven-/decor-living-room.html</link>
+            <description>Transform your space without breaking the bank. Simple, warm styling tips using items you already own.</description>
+            <pubDate>Wed, 01 Jul 2026 09:00:00 GMT</pubDate>
+            <guid>https://cgjob.github.io/Cozy-Haven-/decor-living-room.html</guid>
+            <enclosure url="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" type="image/jpeg" />
+        </item>
+
+        <!-- Article 2 -->
+        <item>
+            <title>Quick 15-Minute Creamy Garlic Pasta</title>
+            <link>https://cgjob.github.io/Cozy-Haven-/food-pasta.html</link>
+            <description>Perfect for busy weeknights. A rich, restaurant-style creamy pasta recipe requiring only 5 staple ingredients.</description>
+            <pubDate>Sun, 28 Jun 2026 10:00:00 GMT</pubDate>
+            <guid>https://cgjob.github.io/Cozy-Haven-/food-pasta.html</guid>
+            <enclosure url="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" type="image/jpeg" />
+        </item>
+
+        <!-- Article 3 -->
+        <item>
+            <title>5 Simple Morning Habits for Less Stress</title>
+            <link>https://cgjob.github.io/Cozy-Haven-/wellness-habits.html</link>
+            <description>Start your day with calm energy. Practical mindfulness and routines designed to reset your mental space.</description>
+            <pubDate>Thu, 25 Jun 2026 08:30:00 GMT</pubDate>
+            <guid>https://cgjob.github.io/Cozy-Haven-/wellness-habits.html</guid>
+            <enclosure url="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&amp;fit=crop&amp;q=80&amp;w=1200" type="image/jpeg" />
+        </item>
+    </channel>
+</rss>
